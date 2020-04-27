@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="6.6.0">
+<eagle version="9.6.1">
 <drawing>
 <settings>
-<setting alwaysvectorfont="no"/>
+<setting alwaysvectorfont="yes"/>
+<setting keepoldvectorfont="yes"/>
 <setting verticaltext="up"/>
 </settings>
 <grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
@@ -15021,7 +15022,7 @@ Source: http://eshop.phoenixcontact.com .. 1729128.pdf</description>
 <part name="A1" library="pit" deviceset="ARDUINO_PRO_NANO" device=""/>
 <part name="K1" library="relay" deviceset="S?*" device="202S01"/>
 <part name="K2" library="relay" deviceset="S?*" device="202S01"/>
-<part name="OC1" library="optocoupler" deviceset="H11A*?M" device="" technology="1"/>
+<part name="OC1" library="optocoupler" deviceset="H11A*?M" device="" technology="1" value="H11AA1M"/>
 <part name="LCD" library="pinhead" deviceset="PINHD-2X5" device=""/>
 <part name="ENC" library="pinhead" deviceset="PINHD-1X4" device=""/>
 <part name="C1" library="rcl" deviceset="CX" device="XC10B5" value="100n"/>
@@ -15084,9 +15085,16 @@ Source: http://eshop.phoenixcontact.com .. 1729128.pdf</description>
 <sheets>
 <sheet>
 <plain>
+<text x="17.78" y="2.54" size="1.778" layer="91">Note:
+Actual device has 
+2 anit-parallel LEDs;
+Pinout is the same.</text>
 </plain>
 <instances>
-<instance part="A1" gate="G$1" x="205.74" y="63.5"/>
+<instance part="A1" gate="G$1" x="205.74" y="63.5" smashed="yes">
+<attribute name="NAME" x="200.66" y="58.42" size="1.778" layer="95"/>
+<attribute name="VALUE" x="200.66" y="66.04" size="1.778" layer="95"/>
+</instance>
 <instance part="K1" gate="1" x="83.82" y="48.26" smashed="yes" rot="R270">
 <attribute name="NAME" x="90.17" y="55.88" size="1.778" layer="95" font="vector" rot="R270"/>
 <attribute name="VALUE" x="76.2" y="55.88" size="1.778" layer="96" font="vector" rot="R270"/>
@@ -15099,8 +15107,14 @@ Source: http://eshop.phoenixcontact.com .. 1729128.pdf</description>
 <attribute name="NAME" x="34.925" y="33.655" size="1.778" layer="95" rot="MR0"/>
 <attribute name="VALUE" x="34.925" y="17.78" size="1.778" layer="96" rot="MR0"/>
 </instance>
-<instance part="LCD" gate="A" x="279.4" y="96.52" rot="R90"/>
-<instance part="ENC" gate="A" x="172.72" y="106.68" rot="R180"/>
+<instance part="LCD" gate="A" x="279.4" y="96.52" smashed="yes" rot="R90">
+<attribute name="NAME" x="271.145" y="90.17" size="1.778" layer="95" rot="R90"/>
+<attribute name="VALUE" x="289.56" y="90.17" size="1.778" layer="96" rot="R90"/>
+</instance>
+<instance part="ENC" gate="A" x="172.72" y="106.68" smashed="yes" rot="R180">
+<attribute name="NAME" x="179.07" y="98.425" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="179.07" y="114.3" size="1.778" layer="96" rot="R180"/>
+</instance>
 <instance part="C1" gate="G$1" x="81.28" y="30.48" smashed="yes">
 <attribute name="NAME" x="76.454" y="30.861" size="1.778" layer="95"/>
 <attribute name="VALUE" x="74.422" y="25.273" size="1.778" layer="96"/>
@@ -15117,18 +15131,36 @@ Source: http://eshop.phoenixcontact.com .. 1729128.pdf</description>
 <attribute name="NAME" x="138.684" y="31.0134" size="1.778" layer="95" rot="R180"/>
 <attribute name="VALUE" x="140.97" y="27.686" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="AC" gate="-1" x="58.42" y="10.16" rot="R270"/>
-<instance part="AC" gate="-2" x="63.5" y="10.16" rot="R270"/>
-<instance part="HT" gate="-1" x="86.36" y="10.16" rot="R270"/>
-<instance part="HT" gate="-2" x="91.44" y="10.16" rot="R270"/>
+<instance part="AC" gate="-1" x="58.42" y="10.16" smashed="yes" rot="R270">
+<attribute name="NAME" x="57.531" y="7.112" size="1.778" layer="95" rot="R270"/>
+<attribute name="VALUE" x="54.737" y="12.7" size="1.778" layer="96" rot="R270"/>
+</instance>
+<instance part="AC" gate="-2" x="63.5" y="10.16" smashed="yes" rot="R270">
+<attribute name="NAME" x="62.611" y="7.112" size="1.778" layer="95" rot="R270"/>
+<attribute name="VALUE" x="59.817" y="12.7" size="1.778" layer="96" rot="R270"/>
+</instance>
+<instance part="HT" gate="-1" x="86.36" y="10.16" smashed="yes" rot="R270">
+<attribute name="NAME" x="85.471" y="7.112" size="1.778" layer="95" rot="R270"/>
+<attribute name="VALUE" x="82.677" y="12.7" size="1.778" layer="96" rot="R270"/>
+</instance>
+<instance part="HT" gate="-2" x="91.44" y="10.16" smashed="yes" rot="R270">
+<attribute name="NAME" x="90.551" y="7.112" size="1.778" layer="95" rot="R270"/>
+<attribute name="VALUE" x="87.757" y="12.7" size="1.778" layer="96" rot="R270"/>
+</instance>
 <instance part="FAN" gate="-1" x="129.54" y="10.16" smashed="yes" rot="R270">
 <attribute name="NAME" x="128.651" y="7.112" size="1.778" layer="95" rot="R270"/>
 </instance>
 <instance part="FAN" gate="-2" x="134.62" y="10.16" smashed="yes" rot="R270">
 <attribute name="NAME" x="133.731" y="7.112" size="1.778" layer="95" rot="R270"/>
 </instance>
-<instance part="IC2" gate="G$1" x="271.78" y="-2.54"/>
-<instance part="C3" gate="G$1" x="254" y="5.08"/>
+<instance part="IC2" gate="G$1" x="271.78" y="-2.54" smashed="yes">
+<attribute name="NAME" x="261.62" y="12.7" size="1.27" layer="95"/>
+<attribute name="VALUE" x="261.62" y="10.16" size="1.27" layer="96"/>
+</instance>
+<instance part="C3" gate="G$1" x="254" y="5.08" smashed="yes">
+<attribute name="NAME" x="255.524" y="5.461" size="1.778" layer="95"/>
+<attribute name="VALUE" x="255.524" y="0.381" size="1.778" layer="96"/>
+</instance>
 <instance part="TC2" gate="-1" x="246.38" y="-22.86" smashed="yes" rot="R270">
 <attribute name="NAME" x="245.491" y="-25.908" size="1.778" layer="95" rot="R270"/>
 </instance>
@@ -15144,15 +15176,29 @@ Source: http://eshop.phoenixcontact.com .. 1729128.pdf</description>
 <attribute name="NAME" x="127.7874" y="64.77" size="1.778" layer="95" rot="R90"/>
 <attribute name="VALUE" x="132.842" y="64.262" size="1.778" layer="96" rot="R90"/>
 </instance>
-<instance part="R5" gate="G$1" x="48.26" y="30.48" rot="R180"/>
-<instance part="R6" gate="G$1" x="48.26" y="22.86" rot="R180"/>
+<instance part="R5" gate="G$1" x="48.26" y="30.48" smashed="yes" rot="R180">
+<attribute name="NAME" x="52.07" y="28.9814" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="52.07" y="33.782" size="1.778" layer="96" rot="R180"/>
+</instance>
+<instance part="R6" gate="G$1" x="48.26" y="22.86" smashed="yes" rot="R180">
+<attribute name="NAME" x="52.07" y="21.3614" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="52.07" y="26.162" size="1.778" layer="96" rot="R180"/>
+</instance>
 <instance part="GND2" gate="1" x="17.78" y="17.78" smashed="yes"/>
-<instance part="P+2" gate="VCC" x="129.54" y="76.2"/>
-<instance part="P+3" gate="VCC" x="86.36" y="76.2"/>
+<instance part="P+2" gate="VCC" x="129.54" y="76.2" smashed="yes">
+<attribute name="VALUE" x="127" y="73.66" size="1.778" layer="96" rot="R90"/>
+</instance>
+<instance part="P+3" gate="VCC" x="86.36" y="76.2" smashed="yes">
+<attribute name="VALUE" x="83.82" y="73.66" size="1.778" layer="96" rot="R90"/>
+</instance>
 <instance part="GND3" gate="1" x="215.9" y="25.4" smashed="yes"/>
-<instance part="P+4" gate="VCC" x="215.9" y="96.52"/>
+<instance part="P+4" gate="VCC" x="215.9" y="96.52" smashed="yes">
+<attribute name="VALUE" x="213.36" y="93.98" size="1.778" layer="96" rot="R90"/>
+</instance>
 <instance part="GND4" gate="1" x="182.88" y="93.98" smashed="yes"/>
-<instance part="P+6" gate="VCC" x="284.48" y="121.92"/>
+<instance part="P+6" gate="VCC" x="284.48" y="121.92" smashed="yes">
+<attribute name="VALUE" x="281.94" y="119.38" size="1.778" layer="96" rot="R90"/>
+</instance>
 <instance part="GND6" gate="1" x="274.32" y="78.74" smashed="yes"/>
 <instance part="R8" gate="G$1" x="289.56" y="0" smashed="yes" rot="R90">
 <attribute name="NAME" x="288.0614" y="1.27" size="1.778" layer="95" rot="R90"/>
@@ -15168,22 +15214,45 @@ Source: http://eshop.phoenixcontact.com .. 1729128.pdf</description>
 <instance part="D2" gate="G$1" x="302.26" y="-15.24" smashed="yes">
 <attribute name="NAME" x="299.72" y="-19.304" size="1.778" layer="95"/>
 </instance>
-<instance part="+3V1" gate="G$1" x="254" y="17.78"/>
-<instance part="+3V2" gate="G$1" x="289.56" y="17.78"/>
-<instance part="IC3" gate="G$1" x="299.72" y="53.34" rot="R270"/>
-<instance part="P+1" gate="VCC" x="281.94" y="66.04"/>
+<instance part="+3V1" gate="G$1" x="254" y="17.78" smashed="yes">
+<attribute name="VALUE" x="251.46" y="12.7" size="1.778" layer="96" rot="R90"/>
+</instance>
+<instance part="+3V2" gate="G$1" x="289.56" y="17.78" smashed="yes">
+<attribute name="VALUE" x="287.02" y="12.7" size="1.778" layer="96" rot="R90"/>
+</instance>
+<instance part="IC3" gate="G$1" x="299.72" y="53.34" smashed="yes" rot="R270">
+<attribute name="NAME" x="294.64" y="66.04" size="1.778" layer="95"/>
+<attribute name="VALUE" x="294.64" y="40.64" size="1.778" layer="96"/>
+</instance>
+<instance part="P+1" gate="VCC" x="281.94" y="66.04" smashed="yes">
+<attribute name="VALUE" x="279.4" y="63.5" size="1.778" layer="96" rot="R90"/>
+</instance>
 <instance part="GND5" gate="1" x="276.86" y="38.1" smashed="yes"/>
-<instance part="+3V3" gate="G$1" x="312.42" y="66.04"/>
-<instance part="C4" gate="G$1" x="322.58" y="53.34"/>
-<instance part="C5" gate="G$1" x="330.2" y="53.34"/>
+<instance part="+3V3" gate="G$1" x="312.42" y="66.04" smashed="yes">
+<attribute name="VALUE" x="309.88" y="60.96" size="1.778" layer="96" rot="R90"/>
+</instance>
+<instance part="C4" gate="G$1" x="322.58" y="53.34" smashed="yes">
+<attribute name="NAME" x="323.723" y="53.8226" size="1.778" layer="95"/>
+<attribute name="VALUE" x="323.723" y="48.7426" size="1.778" layer="96"/>
+</instance>
+<instance part="C5" gate="G$1" x="330.2" y="53.34" smashed="yes">
+<attribute name="NAME" x="331.343" y="53.8226" size="1.778" layer="95"/>
+<attribute name="VALUE" x="331.343" y="48.7426" size="1.778" layer="96"/>
+</instance>
 <instance part="C6" gate="G$1" x="251.46" y="-12.7" smashed="yes" rot="R90">
 <attribute name="NAME" x="251.206" y="-9.779" size="1.778" layer="95" rot="R180"/>
 <attribute name="VALUE" x="251.968" y="-15.621" size="1.778" layer="96" rot="R180"/>
 </instance>
 <instance part="GND7" gate="1" x="322.58" y="43.18" smashed="yes"/>
 <instance part="GND8" gate="1" x="330.2" y="43.18" smashed="yes"/>
-<instance part="IC1" gate="G$1" x="185.42" y="-2.54"/>
-<instance part="C7" gate="G$1" x="167.64" y="5.08"/>
+<instance part="IC1" gate="G$1" x="185.42" y="-2.54" smashed="yes">
+<attribute name="NAME" x="175.26" y="12.7" size="1.27" layer="95"/>
+<attribute name="VALUE" x="175.26" y="10.16" size="1.27" layer="96"/>
+</instance>
+<instance part="C7" gate="G$1" x="167.64" y="5.08" smashed="yes">
+<attribute name="NAME" x="169.164" y="5.461" size="1.778" layer="95"/>
+<attribute name="VALUE" x="169.164" y="0.381" size="1.778" layer="96"/>
+</instance>
 <instance part="TC1" gate="-1" x="160.02" y="-22.86" smashed="yes" rot="R270">
 <attribute name="NAME" x="159.131" y="-25.908" size="1.778" layer="95" rot="R270"/>
 </instance>
@@ -15205,8 +15274,12 @@ Source: http://eshop.phoenixcontact.com .. 1729128.pdf</description>
 <instance part="D4" gate="G$1" x="215.9" y="-15.24" smashed="yes">
 <attribute name="NAME" x="213.36" y="-19.304" size="1.778" layer="95"/>
 </instance>
-<instance part="+3V4" gate="G$1" x="167.64" y="17.78"/>
-<instance part="+3V5" gate="G$1" x="203.2" y="17.78"/>
+<instance part="+3V4" gate="G$1" x="167.64" y="17.78" smashed="yes">
+<attribute name="VALUE" x="165.1" y="12.7" size="1.778" layer="96" rot="R90"/>
+</instance>
+<instance part="+3V5" gate="G$1" x="203.2" y="17.78" smashed="yes">
+<attribute name="VALUE" x="200.66" y="12.7" size="1.778" layer="96" rot="R90"/>
+</instance>
 <instance part="C8" gate="G$1" x="165.1" y="-12.7" smashed="yes" rot="R90">
 <attribute name="NAME" x="164.846" y="-9.779" size="1.778" layer="95" rot="R180"/>
 <attribute name="VALUE" x="165.608" y="-15.621" size="1.778" layer="96" rot="R180"/>
@@ -15218,14 +15291,25 @@ Source: http://eshop.phoenixcontact.com .. 1729128.pdf</description>
 <attribute name="NAME" x="333.248" y="16.891" size="1.778" layer="95"/>
 </instance>
 <instance part="GND10" gate="1" x="325.12" y="5.08" smashed="yes"/>
-<instance part="P+5" gate="VCC" x="325.12" y="25.4"/>
-<instance part="3V3" gate="G$1" x="322.58" y="66.04"/>
+<instance part="P+5" gate="VCC" x="325.12" y="25.4" smashed="yes">
+<attribute name="VALUE" x="322.58" y="22.86" size="1.778" layer="96" rot="R90"/>
+</instance>
+<instance part="3V3" gate="G$1" x="322.58" y="66.04" smashed="yes">
+<attribute name="NAME" x="321.31" y="67.31" size="1.778" layer="95"/>
+<attribute name="TP_SIGNAL_NAME" x="323.85" y="64.77" size="1.778" layer="97"/>
+</instance>
 <instance part="C9" gate="G$1" x="40.64" y="27.94" smashed="yes">
 <attribute name="NAME" x="39.624" y="32.639" size="1.778" layer="95"/>
 <attribute name="VALUE" x="38.354" y="19.685" size="1.778" layer="96"/>
 </instance>
-<instance part="KK1" gate="G$1" x="137.16" y="50.8" rot="R270"/>
-<instance part="KK2" gate="G$1" x="93.98" y="50.8" rot="R270"/>
+<instance part="KK1" gate="G$1" x="137.16" y="50.8" smashed="yes" rot="R270">
+<attribute name="NAME" x="140.335" y="45.085" size="1.778" layer="95" rot="R270"/>
+<attribute name="VALUE" x="137.795" y="45.085" size="1.778" layer="96" rot="R270"/>
+</instance>
+<instance part="KK2" gate="G$1" x="93.98" y="50.8" smashed="yes" rot="R270">
+<attribute name="NAME" x="97.155" y="45.085" size="1.778" layer="95" rot="R270"/>
+<attribute name="VALUE" x="94.615" y="45.085" size="1.778" layer="96" rot="R270"/>
+</instance>
 </instances>
 <busses>
 </busses>
@@ -15803,4 +15887,10 @@ Source: http://eshop.phoenixcontact.com .. 1729128.pdf</description>
 </sheets>
 </schematic>
 </drawing>
+<compatibility>
+<note version="6.3" minversion="6.2.2" severity="warning">
+Since Version 6.2.2 text objects can contain more than one line,
+which will not be processed correctly with this version.
+</note>
+</compatibility>
 </eagle>
